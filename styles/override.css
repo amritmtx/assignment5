@@ -1,0 +1,42 @@
+html {
+  font-family: sans-serif;
+  background: white !important;
+}
+
+.container--modifier {
+  height: 100vh;
+}
+
+.card--modifier {
+  -webkit-box-shadow: 4px 4px 29px -5px rgba(117, 113, 117, 1);
+  -moz-box-shadow: 4px 4px 29px -5px rgba(117, 113, 117, 1);
+  box-shadow: 4px 4px 29px -5px rgba(117, 113, 117, 1);
+}
+
+.header-row--modifier {
+  background-color: white;
+  font-size: 12px;
+  color: grey;
+  height: 50px;
+}
+
+.body-row--modifier {
+  background-color: white;
+  font-size: 13px;
+  color: #353435;
+  height: 50px;
+  border-bottom: 1px solid #c7c7c759;
+}
+
+.headshot--modifier {
+  width: 30px;
+  height: 30px;
+}
+
+.view-col--modifier {
+  color: #2196f3;
+}
+
+.view-col--modifier > span > span > svg {
+  fill: #2196f3;
+}
