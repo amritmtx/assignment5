@@ -3,29 +3,32 @@ html {
   background: white !important;
 }
 
-.container--modifier {
-  height: 100vh;
+.display-medium--block {
+  display: block;
+}
+
+.display-medium--none {
+  display: none;
 }
 
 .card--modifier {
-  -webkit-box-shadow: 4px 4px 29px -5px rgba(117, 113, 117, 1);
-  -moz-box-shadow: 4px 4px 29px -5px rgba(117, 113, 117, 1);
-  box-shadow: 4px 4px 29px -5px rgba(117, 113, 117, 1);
+  border-radius: 3px;
+  box-shadow: 2px 2px 30px 2px rgba(0, 0, 0, 0.08);
 }
 
 .header-row--modifier {
   background-color: white;
-  font-size: 12px;
-  color: grey;
+  font-size: 13px;
+  color: rgb(146, 146, 146);
   height: 50px;
 }
 
 .body-row--modifier {
   background-color: white;
-  font-size: 13px;
-  color: #353435;
+  font-size: 14px;
+  color: rgb(48, 48, 48);
   height: 50px;
-  border-bottom: 1px solid #c7c7c759;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.15);
 }
 
 .headshot--modifier {
@@ -34,9 +37,71 @@ html {
 }
 
 .view-col--modifier {
-  color: #2196f3;
+  color: rgb(0, 160, 255);
 }
 
 .view-col--modifier > span > span > svg {
-  fill: #2196f3;
+  fill: rgb(0, 160, 255);
+}
+
+@media only screen and (max-width: 767px) {
+  .display-medium--block {
+    display: none;
+  }
+
+  .display-medium--none {
+    display: block;
+  }
+
+  .card--modifier {
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header-row--modifier {
+    display: none;
+  }
+  .body-row--modifier {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+    margin: 15px;
+    border-bottom: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 30px 2px rgba(0, 0, 0, 0.08);
+    position: relative;
+  }
+  .headshot--modifier {
+    width: 80px;
+    height: 80px;
+  }
+  .card-body--name {
+    font-size: 16px;
+    color: rgb(35, 36, 37);
+    margin-top: 10px;
+  }
+  .card-body--content {
+    color: rgb(146, 146, 146);
+    font-size: 12px;
+  }
+
+  .card-body--contribution {
+    font-size: 16px;
+    color: rgb(35, 36, 37);
+    margin-bottom: 10px;
+  }
+
+  .card-body--menu-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .view-col--modifier {
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid rgba(151, 151, 151, 0.15);
+    text-align: center;
+  }
 }
