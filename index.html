@@ -11,59 +11,303 @@
     <title>MTX Group Inc.</title>
   </head>
   <body>
-    <section
-      class="slds-size--12-of-12 slds-medium-size--10-of-12 slds-large-size--10-of-12 slds-p-horizontal--x-large card--modifier"
-      style="margin: 200px auto"
+    <!-- Header -->
+    <header>
+      <div
+        class="slds-grid slds-grid--align-spread slds-global-header slds-grid slds-grid_align-spread header-height"
+      >
+        <div class="slds-col">
+          <div class="slds-grid slds-grid--vertical-align-center">
+            <button
+              class="slds-button slds-button_icon slds-button_icon-small slds-m-left--small is-none-medium"
+              aria-pressed="false"
+              title="Toggle Favorites"
+              onClick="handleSidebar()"
+            >
+              <svg
+                class="slds-icon slds-icon_x-small icon--black"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#rows"
+                ></use>
+              </svg>
+            </button>
+            <img
+              src="images/logo.svg"
+              alt="Logo"
+              class="logo-header slds-m-left--small"
+            />
+          </div>
+        </div>
+        <div class="slds-col slds-grid slds-grid--vertical-align-center">
+          <div
+            class="slds-col slds-p-horizontal--small nav--border-right nav-items is-hidden-small is-block-medium"
+          >
+            Dashboard
+          </div>
+          <div
+            class="slds-col nav--border-right nav-items slds-p-horizontal--small"
+          >
+            <button
+              class="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-actions__notifications slds-global-actions__item-action"
+              title="no new notifications"
+              aria-live="assertive"
+              aria-atomic="true"
+            >
+              <svg
+                class="slds-button__icon slds-global-header__icon"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#notification"
+                ></use>
+              </svg>
+            </button>
+          </div>
+          <div class="slds-col slds-m-horizontal--small">
+            <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
+              <img
+                alt="Person name"
+                src="images/avatar2.jpg"
+                title="User avatar"
+              />
+            </span>
+          </div>
+          <div class="slds-col nav-items is-hidden-small is-block-medium">
+            Amrit Srivastava
+          </div>
+          <div
+            class="slds-col slds-m-horizontal--small slds-dropdown-trigger slds-dropdown-trigger_click is-hidden-small is-block-medium"
+          >
+            <span
+              class="slds-icon_container slds-icon-utility-chevrondown slds-current-color"
+            >
+              <button
+                class="slds-button slds-button_icon slds-button_icon-small"
+                aria-pressed="false"
+                title="Toggle Favorites"
+              >
+                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                  <use
+                    xlink:href="icons/utility-sprite/svg/symbols.svg#chevrondown"
+                  ></use>
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar and Table/Card Container -->
+    <div
+      class="slds-panel slds-size--small slds-panel_docked slds-panel_docked-left side-bar is-block-medium slds-float--left"
+      id="sidebar"
+      aria-hidden="false"
     >
+      <!-- Sidebar -->
+      <div class="slds-panel__body">
+        <div>
+          <h3
+            class="slds-text-title--caps color-light-blue slds-m-vertical--large"
+          >
+            SUMMARY
+          </h3>
+          <ul>
+            <li class="slds-m-vertical--large">Account Summary</li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            class="slds-text-title--caps color-light-blue slds-m-vertical--large"
+          >
+            INVESTMENTS
+          </h3>
+          <ul>
+            <li class="slds-m-top--large slds-m-bottom--small">
+              My Investments
+            </li>
+            <li class="slds-m-top--small slds-m-bottom--large">
+              Investor List
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            class="slds-text-title--caps color-light-blue slds-m-vertical--large"
+          >
+            DOCUMENTS
+          </h3>
+          <ul>
+            <li class="slds-m-top--large slds-m-bottom--small">My Document</li>
+            <li class="slds-m-top--small slds-m-bottom--large">
+              Delegate Document
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            class="slds-text-title--caps color-light-blue slds-m-vertical--large"
+          >
+            TRANSACTIONS
+          </h3>
+          <ul>
+            <li class="slds-m-vertical--large">My Transactions</li>
+          </ul>
+        </div>
+        <div>
+          <h3
+            class="slds-text-title--caps color-light-blue slds-m-vertical--large"
+          >
+            DELEGATE
+          </h3>
+          <ul>
+            <li class="slds-m-vertical--large">My Delegate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table/Card -->
+    <section
+      class="slds-grid slds-p-around--large slds-grid_align-space is-hidden-small is-flex-medium"
+    >
+      <div class="slds-text-heading_medium slds-large-size--4-of-12">
+        Investor List
+      </div>
+      <div class="slds-form-element slds-large-size--3-of-12">
+        <div
+          class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right"
+        >
+          <input
+            type="text"
+            id="text-input-id-1"
+            placeholder="Placeholder text…"
+            class="slds-input"
+          />
+          <button
+            class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+            title="Clear"
+          >
+            <svg
+              class="slds-button__icon slds-icon-text-light"
+              aria-hidden="true"
+            >
+              <use
+                xlink:href="icons/utility-sprite/svg/symbols.svg#search"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="slds-form-element slds-large-size--1-of-12">
+        <div class="slds-form-element__control">
+          <div class="slds-select_container">
+            <select class="slds-select" id="select-01">
+              <option>Both</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="slds-form-element slds-large-size--1-of-12">
+        <div class="slds-form-element__control">
+          <div class="slds-select_container">
+            <select class="slds-select" id="select-01">
+              <option>All</option>
+              <option>Individual</option>
+              <option>IRA</option>
+              <option>Trust</option>
+              <option>Joint</option>
+              <option>Entity</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          class="slds-button slds-button_icon slds-button_icon-border-filled"
+          title="Search"
+          onclick="cardView()"
+        >
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="icons/utility-sprite/svg/symbols.svg#ad_set"></use>
+          </svg>
+          <span class="slds-assistive-text">Card View</span>
+        </button>
+        <button
+          class="slds-button slds-button_icon slds-button_icon-border-filled"
+          title="Search"
+          onclick="tableView()"
+        >
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="icons/utility-sprite/svg/symbols.svg#table"></use>
+          </svg>
+          <span class="slds-assistive-text">Table View</span>
+        </button>
+      </div>
+      <div>
+        <button
+          class="slds-button slds-button_icon slds-button_icon-border-filled"
+          title="Search"
+        >
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#download"
+            ></use>
+          </svg>
+          <span class="slds-assistive-text">Download</span>
+        </button>
+      </div>
+    </section>
+
+    <section
+      class="slds-grid slds-wrap slds-p-around--x-large slds-m-horizontal--large slds-grid_align-space table-view"
+      id="card-table-container"
+    >
+      <!-- Table Heading -->
       <div
-        class="slds-grid slds-grid--vertical-align-center header-row--modifier"
+        class="slds-grid slds-p-around--small slds-m-vertical--small header-row--modifier card--modifier is-hidden-small"
       >
-        <div class="slds-col slds-medium-size--1-of-12"></div>
-        <div class="slds-col slds-medium-size--3-of-12">Name</div>
-        <div class="slds-col slds-medium-size--2-of-12">
-          Total Contributions
-        </div>
-        <div class="slds-col slds-medium-size--2-of-12">
-          Total Distributions
-        </div>
-        <div class="slds-col slds-medium-size--2-of-12">Total Balance</div>
-        <div class="slds-col slds-medium-size--1-of-12">Details</div>
-        <div class="slds-col slds-medium-size--1-of-12"></div>
+        <div class="width-10"></div>
+        <div class="width-20">Name</div>
+        <div class="width-15">Total Contributions</div>
+        <div class="width-15">Total Distributions</div>
+        <div class="width-15">Total Balance</div>
+        <div class="width-15">Details</div>
+        <div class="width-10"></div>
       </div>
 
+      <!-- Table Rows / Cards -->
       <div
-        class="slds-grid slds-size--12-of-12 slds-small-size--5-of-12 slds-medium-size--12-of-12 slds-grid--vertical-align-center slds-gutters_small body-row--modifier"
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
       >
-        <div class="slds-col slds-medium-size--1-of-12 slds-text-align_center">
+        <div class="slds-text-align_center headshot--modifier width-10">
           <img
             src="https://source.unsplash.com/400x400/?headshot"
             alt="headshot"
-            class="headshot--modifier slds-avatar--circle"
+            class="slds-avatar--circle"
           />
         </div>
-        <div class="slds-col slds-medium-size--3-of-12 card-body--name">
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
           Amrit Srivastava
         </div>
-        <div
-          class="slds-col slds-m-bottom--small slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
           amrit.srivastava@mtxb2b.com
         </div>
-        <div
-          class="slds-col slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="card-body--sub-content is-none-table">
           Total Contributions
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 card-body--contribution">
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
-          $ 821243
-        </div>
-        <div class="slds-col slds-medium-size--1-of-12 view-col--modifier">
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
           <span>
             <span>
               <svg
@@ -78,9 +322,7 @@
             View
           </span>
         </div>
-        <div
-          class="slds-col slds-medium-size--1-of-12 slds-text-align_center card-body--menu-icon"
-        >
+        <div class="card-body--menu-icon width-10">
           <svg
             class="slds-icon slds-icon-text-default slds-icon--x-small"
             aria-hidden="true"
@@ -91,40 +333,33 @@
           </svg>
         </div>
       </div>
-
       <div
-        class="slds-grid slds-size--12-of-12 slds-small-size--5-of-12 slds-medium-size--12-of-12 slds-grid--vertical-align-center slds-gutters_small body-row--modifier"
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
       >
-        <div class="slds-col slds-medium-size--1-of-12 slds-text-align_center">
+        <div class="slds-text-align_center headshot--modifier width-10">
           <img
             src="https://source.unsplash.com/400x400/?headshot"
             alt="headshot"
-            class="headshot--modifier slds-avatar--circle"
+            class="slds-avatar--circle"
           />
         </div>
-        <div class="slds-col slds-medium-size--3-of-12 card-body--name">
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
           Amrit Srivastava
         </div>
-        <div
-          class="slds-col slds-m-bottom--small slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
           amrit.srivastava@mtxb2b.com
         </div>
-        <div
-          class="slds-col slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="card-body--sub-content is-none-table">
           Total Contributions
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 card-body--contribution">
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
-          $ 821243
-        </div>
-        <div class="slds-col slds-medium-size--1-of-12 view-col--modifier">
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
           <span>
             <span>
               <svg
@@ -139,9 +374,7 @@
             View
           </span>
         </div>
-        <div
-          class="slds-col slds-medium-size--1-of-12 slds-text-align_center card-body--menu-icon"
-        >
+        <div class="card-body--menu-icon width-10">
           <svg
             class="slds-icon slds-icon-text-default slds-icon--x-small"
             aria-hidden="true"
@@ -152,40 +385,33 @@
           </svg>
         </div>
       </div>
-
       <div
-        class="slds-grid slds-size--12-of-12 slds-small-size--5-of-12 slds-medium-size--12-of-12 slds-grid--vertical-align-center slds-gutters_small body-row--modifier"
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
       >
-        <div class="slds-col slds-medium-size--1-of-12 slds-text-align_center">
+        <div class="slds-text-align_center headshot--modifier width-10">
           <img
             src="https://source.unsplash.com/400x400/?headshot"
             alt="headshot"
-            class="headshot--modifier slds-avatar--circle"
+            class="slds-avatar--circle"
           />
         </div>
-        <div class="slds-col slds-medium-size--3-of-12 card-body--name">
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
           Amrit Srivastava
         </div>
-        <div
-          class="slds-col slds-m-bottom--small slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
           amrit.srivastava@mtxb2b.com
         </div>
-        <div
-          class="slds-col slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="card-body--sub-content is-none-table">
           Total Contributions
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 card-body--contribution">
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
-          $ 821243
-        </div>
-        <div class="slds-col slds-medium-size--1-of-12 view-col--modifier">
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
           <span>
             <span>
               <svg
@@ -200,9 +426,7 @@
             View
           </span>
         </div>
-        <div
-          class="slds-col slds-medium-size--1-of-12 slds-text-align_center card-body--menu-icon"
-        >
+        <div class="card-body--menu-icon width-10">
           <svg
             class="slds-icon slds-icon-text-default slds-icon--x-small"
             aria-hidden="true"
@@ -213,40 +437,33 @@
           </svg>
         </div>
       </div>
-
       <div
-        class="slds-grid slds-size--12-of-12 slds-small-size--5-of-12 slds-medium-size--12-of-12 slds-grid--vertical-align-center slds-gutters_small body-row--modifier"
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
       >
-        <div class="slds-col slds-medium-size--1-of-12 slds-text-align_center">
+        <div class="slds-text-align_center headshot--modifier width-10">
           <img
             src="https://source.unsplash.com/400x400/?headshot"
             alt="headshot"
-            class="headshot--modifier slds-avatar--circle"
+            class="slds-avatar--circle"
           />
         </div>
-        <div class="slds-col slds-medium-size--3-of-12 card-body--name">
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
           Amrit Srivastava
         </div>
-        <div
-          class="slds-col slds-m-bottom--small slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
           amrit.srivastava@mtxb2b.com
         </div>
-        <div
-          class="slds-col slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="card-body--sub-content is-none-table">
           Total Contributions
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 card-body--contribution">
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
-          $ 821243
-        </div>
-        <div class="slds-col slds-medium-size--1-of-12 view-col--modifier">
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
           <span>
             <span>
               <svg
@@ -261,9 +478,7 @@
             View
           </span>
         </div>
-        <div
-          class="slds-col slds-medium-size--1-of-12 slds-text-align_center card-body--menu-icon"
-        >
+        <div class="card-body--menu-icon width-10">
           <svg
             class="slds-icon slds-icon-text-default slds-icon--x-small"
             aria-hidden="true"
@@ -274,40 +489,33 @@
           </svg>
         </div>
       </div>
-
       <div
-        class="slds-grid slds-size--12-of-12 slds-small-size--5-of-12 slds-medium-size--12-of-12 slds-grid--vertical-align-center slds-gutters_small body-row--modifier"
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
       >
-        <div class="slds-col slds-medium-size--1-of-12 slds-text-align_center">
+        <div class="slds-text-align_center headshot--modifier width-10">
           <img
             src="https://source.unsplash.com/400x400/?headshot"
             alt="headshot"
-            class="headshot--modifier slds-avatar--circle"
+            class="slds-avatar--circle"
           />
         </div>
-        <div class="slds-col slds-medium-size--3-of-12 card-body--name">
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
           Amrit Srivastava
         </div>
-        <div
-          class="slds-col slds-m-bottom--small slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
           amrit.srivastava@mtxb2b.com
         </div>
-        <div
-          class="slds-col slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="card-body--sub-content is-none-table">
           Total Contributions
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 card-body--contribution">
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
-          $ 821243
-        </div>
-        <div class="slds-col slds-medium-size--1-of-12 view-col--modifier">
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
           <span>
             <span>
               <svg
@@ -322,9 +530,7 @@
             View
           </span>
         </div>
-        <div
-          class="slds-col slds-medium-size--1-of-12 slds-text-align_center card-body--menu-icon"
-        >
+        <div class="card-body--menu-icon width-10">
           <svg
             class="slds-icon slds-icon-text-default slds-icon--x-small"
             aria-hidden="true"
@@ -335,40 +541,33 @@
           </svg>
         </div>
       </div>
-
       <div
-        class="slds-grid slds-size--12-of-12 slds-small-size--5-of-12 slds-medium-size--12-of-12 slds-grid--vertical-align-center slds-gutters_small body-row--modifier"
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
       >
-        <div class="slds-col slds-medium-size--1-of-12 slds-text-align_center">
+        <div class="slds-text-align_center headshot--modifier width-10">
           <img
             src="https://source.unsplash.com/400x400/?headshot"
             alt="headshot"
-            class="headshot--modifier slds-avatar--circle"
+            class="slds-avatar--circle"
           />
         </div>
-        <div class="slds-col slds-medium-size--3-of-12 card-body--name">
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
           Amrit Srivastava
         </div>
-        <div
-          class="slds-col slds-m-bottom--small slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
           amrit.srivastava@mtxb2b.com
         </div>
-        <div
-          class="slds-col slds-medium-size--3-of-12 card-body--content display-medium--none"
-        >
+        <div class="card-body--sub-content is-none-table">
           Total Contributions
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 card-body--contribution">
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
+        <div class="is-hidden-small is-block-table width-15 table-cell">
           $ 821243
         </div>
-        <div class="slds-col slds-medium-size--2-of-12 display-medium--block">
-          $ 821243
-        </div>
-        <div class="slds-col slds-medium-size--1-of-12 view-col--modifier">
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
           <span>
             <span>
               <svg
@@ -383,9 +582,423 @@
             View
           </span>
         </div>
-        <div
-          class="slds-col slds-medium-size--1-of-12 slds-text-align_center card-body--menu-icon"
-        >
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
+          <svg
+            class="slds-icon slds-icon-text-default slds-icon--x-small"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="icons/utility-sprite/svg/symbols.svg#threedots"
+            ></use>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="slds-grid slds-grid--vertical slds-grid--vertical-align-center card--modifier slds-p-around--small slds-m-vertical--small"
+      >
+        <div class="slds-text-align_center headshot--modifier width-10">
+          <img
+            src="https://source.unsplash.com/400x400/?headshot"
+            alt="headshot"
+            class="slds-avatar--circle"
+          />
+        </div>
+        <div class="card-body--content slds-m-top--small width-20 table-cell">
+          Amrit Srivastava
+        </div>
+        <div class="slds-m-bottom--small card-body--sub-content is-none-table">
+          amrit.srivastava@mtxb2b.com
+        </div>
+        <div class="card-body--sub-content is-none-table">
+          Total Contributions
+        </div>
+        <div class="card-body--content width-15 table-cell">$ 821243</div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="is-hidden-small is-block-table width-15 table-cell">
+          $ 821243
+        </div>
+        <div class="view-col--modifier slds-m-top--small width-15 table-cell">
+          <span>
+            <span>
+              <svg
+                class="slds-icon slds-icon-text-default slds-icon--x-small"
+                aria-hidden="true"
+              >
+                <use
+                  xlink:href="icons/utility-sprite/svg/symbols.svg#preview"
+                ></use>
+              </svg>
+            </span>
+            View
+          </span>
+        </div>
+        <div class="card-body--menu-icon width-10">
           <svg
             class="slds-icon slds-icon-text-default slds-icon--x-small"
             aria-hidden="true"
@@ -397,5 +1010,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Javascript Imports -->
+    <script src="js/index.js"></script>
   </body>
 </html>
